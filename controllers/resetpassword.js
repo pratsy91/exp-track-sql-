@@ -1,17 +1,12 @@
 const uuid = require("uuid");
 const sgMail = require("@sendgrid/mail");
 const bcrypt = require("bcrypt");
-// const Sib = require("Sib-api-v3-sdk");
+
 const nodemailer = require("nodemailer");
 const sendgridTransport = require("nodemailer-sendgrid-transport");
 
 const User = require("../models/user");
 const Forgotpassword = require("../models/forgotpassword");
-
-// const client = Sib.ApiClient.instance;
-// const apikey = client.authentications["api-key"];
-
-// const tranEmailApi = new Sib.TransactionalEmailsApi();
 
 const forgotpassword = async (req, res) => {
   try {
@@ -30,13 +25,6 @@ const forgotpassword = async (req, res) => {
           },
         })
       );
-
-      // const sender = {
-      //     email,
-      // }
-      // const recievers=[{
-      //     email,
-      // }]
 
       transporter
         .sendMail({
