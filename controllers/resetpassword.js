@@ -36,36 +36,6 @@ const forgotpassword = async (req, res) => {
         .then(() => {
           return res.status(202).json({ message: "check your mail!" });
         });
-
-      // tranEmailApi.sendTransacEmail({
-      //     sender,
-      //     to:recievers,
-      //     subject: 'Sendings is Fun',
-      //     textContent:`<a href="http://localhost:5000/password/resetpassword/${id}">Reset password</a>`,
-      // }).then((response) => {
-      //     return res.status(response[0].statusCode).json({message: 'Link to reset password sent to your mail ', sucess: true})
-
-      // })
-      // .catch((error) => {
-      //     throw new Error(error);
-      // })
-      // const msg = {
-      //     to: email, // Change to your recipient
-      //     from: 'yj.rocks.2411@gmail.com', // Change to your verified sender
-      //     subject: 'Sending with SendGrid is Fun',
-      //     text: 'and easy to do anywhere, even with Node.js',
-      //     html: `<a href="http://localhost:5000/password/resetpassword/${id}">Reset password</a>`,
-      // }
-
-      // sgMail
-      // .send(msg)
-      // .then((response) => {
-      //     return res.status(response[0].statusCode).json({message: 'Link to reset password sent to your mail ', sucess: true})
-
-      // })
-      // .catch((error) => {
-      //     throw new Error(error);
-      // })
     } else {
       throw new Error("User doesnt exist");
     }
