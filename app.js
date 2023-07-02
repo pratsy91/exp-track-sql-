@@ -37,11 +37,12 @@ Forgotpassword.belongsTo(User);
 
 let port = 5000;
 
-sequelize
-  .sync()
-  .then(() => {
-    app.listen(process.env.PORT | port);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+app.listen(process.env.PORT | port);
+// sequelize
+//   .sync()
+//   .then(() => {
+//     app.listen(process.env.PORT | port);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
