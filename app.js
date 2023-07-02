@@ -40,7 +40,7 @@ let PORT = process.env.PORT || 5000;
 sequelize
   .sync()
   .then(() => {
-    app.listen(PORT);
+    app.listen(port, "0.0.0.0");
   })
   .catch((err) => {
     console.log(err);
