@@ -35,12 +35,12 @@ Order.belongsTo(User);
 User.hasMany(Forgotpassword);
 Forgotpassword.belongsTo(User);
 
-let port = process.env.PORT || 5000;
+let port = 5000;
 
 sequelize
   .sync()
   .then(() => {
-    app.listen(port, "0.0.0.0");
+    app.listen(process.env.PORT | port);
   })
   .catch((err) => {
     console.log(err);
